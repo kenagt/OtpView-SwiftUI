@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 @available(iOS 15, *)
-struct OtpView_SwiftUI: View {
+public struct OtpView_SwiftUI: View {
     
     //MARK: Fields
     enum FocusField: Hashable {
@@ -23,7 +23,7 @@ struct OtpView_SwiftUI: View {
     }
     
     //MARK: Body
-    var body: some View {
+    public var body: some View {
         HStack {
             ZStack(alignment: .center) {
                 TextField("", text: $otpCode)
