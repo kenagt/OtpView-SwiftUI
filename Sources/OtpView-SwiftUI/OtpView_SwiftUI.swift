@@ -10,14 +10,14 @@ public struct OtpView_SwiftUI: View {
     }
     @FocusState private var focusedField: FocusField?
     @Binding var otpCode: String
-    @Binding var otpCodeLengh: Int
+    @Binding var otpCodeLength: Int
     @Binding var textColor: Color
     @Binding var textSize: CGFloat
     
     //MARK: Constructor
-    public init(otpCode: Binding<String>, otpCodeLengh: Binding<Int>, textColor: Binding<Color>, textSize: Binding<CGFloat>) {
+    public init(otpCode: Binding<String>, otpCodeLength: Binding<Int>, textColor: Binding<Color>, textSize: Binding<CGFloat>) {
         self._otpCode = otpCode
-        self._otpCodeLengh = otpCodeLengh
+        self._otpCodeLength = otpCodeLength
         self._textColor = textColor
         self._textSize = textSize
     }
@@ -33,7 +33,7 @@ public struct OtpView_SwiftUI: View {
                     .foregroundColor(.clear)
                     .multilineTextAlignment(.center)
                     .keyboardType(.numberPad)
-                    .onReceive(Just(otpCode)) { _ in limitText(otpCodeLengh) }
+                    .onReceive(Just(otpCode)) { _ in limitText(otpCodeLength) }
                     .focused($focusedField, equals: .field)
                     .task {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5)
@@ -43,7 +43,7 @@ public struct OtpView_SwiftUI: View {
                     }
                     .padding()
                 HStack {
-                    ForEach(0..<otpCodeLengh) { index in
+                    ForEach(0..<otpCodeLength) { index in
                         ZStack {
                             Text(self.getPin(at: index))
                                 .font(Font.system(size: textSize))
