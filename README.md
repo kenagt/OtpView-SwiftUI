@@ -11,7 +11,7 @@ Otp view swift package implemented with Swift &amp; SwiftUI.
 It supports AutoLayout completely.
 
 ```swift
-let growingTextView = NextGrowingTextView()
+let otpView = OtpView_SwiftUI()
 ```
 
 ## Requirements
