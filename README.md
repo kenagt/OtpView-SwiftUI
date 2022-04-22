@@ -11,7 +11,17 @@ Otp view swift package implemented with Swift &amp; SwiftUI.
 It supports AutoLayout completely.
 
 ```swift
-let otpView = OtpView_SwiftUI()
+@State var otpCode: String = ""
+@State var otpCodeLength: Int = 6
+@State var textColor = .black
+@State var textSize = CGFloat(27)
+
+var body: some View {
+    HStack {
+        //OTPTextField { otp, completionHandler in }
+        OtpView_SwiftUI(otpCode: $otpCode, otpCodeLengh: $otpCodeLength, textColor: $textColor, textSize: $textSize)
+    }
+}
 ```
 
 ## Requirements
