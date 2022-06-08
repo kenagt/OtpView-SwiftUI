@@ -10,16 +10,16 @@ public struct OtpView_SwiftUI: View {
     }
     @FocusState private var focusedField: FocusField?
     @Binding var otpCode: String
-    @Binding var otpCodeLength: Int
-    @Binding var textColor: Color
-    @Binding var textSize: CGFloat
+    var otpCodeLength: Int
+    var textColor: Color
+    var textSize: CGFloat
     
     //MARK: Constructor
-    public init(otpCode: Binding<String>, otpCodeLength: Binding<Int>, textColor: Binding<Color>, textSize: Binding<CGFloat>) {
+    public init(otpCode: Binding<String>, otpCodeLength: Int, textColor: Color, textSize: CGFloat) {
         self._otpCode = otpCode
-        self._otpCodeLength = otpCodeLength
-        self._textColor = textColor
-        self._textSize = textSize
+        self.otpCodeLength = otpCodeLength
+        self.textColor = textColor
+        self.textSize = textSize
     }
     
     //MARK: Body
