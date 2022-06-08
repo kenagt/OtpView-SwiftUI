@@ -62,6 +62,7 @@ public struct OtpView_SwiftUI: View {
         }
     }
     
+    //MARK: func
     private func getPin(at index: Int) -> String {
         guard self.otpCode.count > index else {
             return ""
