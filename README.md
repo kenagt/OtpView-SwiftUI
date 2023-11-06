@@ -6,8 +6,7 @@ Otp view swift package implemented with Swift &amp; SwiftUI.
 
 ## How to use
 
-**Create an instance
-
+Create an instance
 It supports AutoLayout completely.
 
 ```swift
